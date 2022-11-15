@@ -1,7 +1,8 @@
-import { AppBar, Toolbar, styled, Typography, InputBase } from "@mui/material";
-
+import { AppBar, Toolbar, styled, Typography, InputBase, Badge, Avatar, Menu, MenuItem } from "@mui/material";
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from "@mui/system";
+import { Mail, Notifications } from "@mui/icons-material";
+import { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
     display: "flex",
@@ -16,19 +17,67 @@ const Search = styled("div")(({ theme }) => ({
 }))
 
 const Icons = styled(Box)(({ theme }) => ({
-    backgroundColor: "white"
+    display: "none",
+    alignItems: "center",
+    gap: "20px",
+    [theme.breakpoints.up("sm")]: {
+        display: "flex"
+    }
 }))
+
+const UserBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    [theme.breakpoints.up("sm")]: {
+        display: "none"
+    }
+}));
 
 
 const Navabar = () => {
+    const [open, setOpen] = useState(false)
     return (
         <AppBar position="sticky">
             <StyledToolbar>
-                <Typography variant="h6" sx={{display: {xs:"none" , sm: "block"}}}>Sety Dev</Typography>
-                <MenuRoundedIcon sx={{display : {xs: "none" , sm:"none"}}}/>
-                <Search><InputBase placeholder="Search ..."/></Search>
-                <Icons>icon</Icons>
+                <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>Sety Dev</Typography>
+                <MenuRoundedIcon sx={{ display: { xs: "none", sm: "none" } }} />
+                <Search><InputBase placeholder="Search ..." /></Search>
+                <Icons>
+                    <Badge badgeContent={4} color="error">
+                        <Mail />
+                    </Badge>
+
+                    <Badge badgeContent={4} color="error">
+                        <Notifications />
+                    </Badge>
+                    <Avatar sx={{ width: 30, height: 30 }} src="" />
+                </Icons>
+
+                <UserBox onClick={() => setOpen(true)} sx={{cursor: "pointer"}}>
+                    <Avatar sx={{ width: 30, height: 30 }} src="" />
+                    <Typography>Setykarimi</Typography>
+                </UserBox>
             </StyledToolbar>
+
+            <Menu
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                open={open}
+                onClose={() => setOpen(false)}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+            >
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>My account</MenuItem>
+                <MenuItem>Logout</MenuItem>
+            </Menu>
         </AppBar>
     )
 }
