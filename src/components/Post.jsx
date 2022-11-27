@@ -7,7 +7,7 @@ const Post = (props) => {
         <Card>
         <CardHeader
             avatar={
-                <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
+                <Avatar sx={{ bgcolor: props.color }} aria-label="recipe">
                    {props.name}
                 </Avatar>
             }
