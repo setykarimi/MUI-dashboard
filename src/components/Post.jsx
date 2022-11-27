@@ -22,8 +22,8 @@ const Post = (props) => {
         <CardMedia
             component="img"
             height="250"
-            image="https://cleanfoodcrush.com/wp-content/uploads/2020/10/Clean-Food-Crush-Spicy-New-Orleans-Inspired-Shrimp-Recipe.jpg"
-            alt="Paella dish"
+            image={props.image}
+            alt={props.alt}
         />
         <CardContent>
             <Typography variant="body2" color="text.secondary">
