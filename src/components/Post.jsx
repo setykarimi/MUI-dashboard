@@ -1,14 +1,14 @@
 import {  Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material"
 import { Avatar,  Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography, Checkbox, Grid } from "@mui/material";
 
-const Post = () => {
+const Post = (props) => {
     return (
         <Grid item lg={6} sm={12}>
         <Card>
         <CardHeader
             avatar={
                 <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-                    R
+                   {props.name}
                 </Avatar>
             }
             action={
@@ -16,8 +16,8 @@ const Post = () => {
                     <MoreVert />
                 </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+            title={props.title}
+            subheader={props.subheader}
         />
         <CardMedia
             component="img"
