@@ -3,8 +3,8 @@ import { Avatar,  Card, CardActions, CardContent, CardHeader, CardMedia, IconBut
 
 const Post = (props) => {
     return (
-        <Grid item lg={6} sm={12}>
-        <Card>
+        <Grid item lg={6} sm={12} >
+        <Card sx={{ height:"100%" }}>
         <CardHeader
             avatar={
                 <Avatar sx={{ bgcolor: props.color }} aria-label="recipe">
@@ -27,9 +27,7 @@ const Post = (props) => {
         />
         <CardContent>
             <Typography variant="body2" color="text.secondary">
-                This impressive paella is a perfect party dish and a fun meal to cook
-                together with your guests. Add 1 cup of frozen peas along with the mussels,
-                if you like.
+                {props.content}
             </Typography>
         </CardContent>
         <CardActions disableSpacing>
