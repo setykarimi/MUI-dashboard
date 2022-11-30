@@ -3,8 +3,8 @@ import React from "react"
 
 const Rightbar = () => {
     return (
-        <Box flex={1} p={2} sx={{ display: { xs: "none", md: "block" } }}>
-            <Box position="fixed" width={300}>
+        <Box flex={2} p={1} sx={{ display: { xs: "none", md: "block" } }}>
+            <Box position="fixed" p={2}>
                 <Typography variant="h6" fontWeight={400}>Online Friends</Typography>
                 <AvatarGroup max={6}>
                     <Avatar alt="person" src="https://mui.com/static/images/avatar/6.jpg" />
@@ -19,7 +19,7 @@ const Rightbar = () => {
                 </AvatarGroup>
 
                 <Typography variant="h6" fontWeight={400} mt={4} mb={3}>Latest Photos</Typography>
-                <ImageList cols={3} rowHeight={100} gap={4}>
+                <ImageList cols={3} rowHeight={120} gap={4}>
                     <ImageListItem>
                         <img src="https://mui.com/static/images/image-list/breakfast.jpg" alt="breakfast" />
                     </ImageListItem>
