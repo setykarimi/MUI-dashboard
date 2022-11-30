@@ -10,7 +10,6 @@ const StyledToolbar = styled(Toolbar)({
 })
 
 const Search = styled("div")(({ theme }) => ({
-    backgroundColor: "white",
     padding: "0 10px",
     borderRadius: theme.shape.borderRadius,
     width: "40%"
@@ -38,11 +37,11 @@ const UserBox = styled(Box)(({ theme }) => ({
 const Navabar = () => {
     const [open, setOpen] = useState(false)
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" sx={{paddingLeft: {xs: "25px", sm: "10px"}}}>
             <StyledToolbar>
                 <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>Sety Dev</Typography>
                 <MenuRoundedIcon sx={{ display: { xs: "none", sm: "none" } }} />
-                <Search><InputBase placeholder="Search ..." /></Search>
+                <Search bgcolor={"background.default"}><InputBase placeholder="Search ..."  color={"text.primary"}/></Search>
                 <Icons>
                     <Badge badgeContent={4} color="error">
                         <Mail />
