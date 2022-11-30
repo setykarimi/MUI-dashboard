@@ -3,7 +3,7 @@ import Post from "./Post"
 
 const Feed = () => {
     return (
-        <Box flex={4} p={2}>
+        <Box flex={4} p={2} sx={{paddingLeft: '0px!important'}}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Post color="red" name="P" title="Pasta" alt="Pasta" subheader="September 14, 2016" 
                 image="https://img.freepik.com/free-photo/comida-lifestyle-spaghetti-foodie-gastronomy_1350-47.jpg?t=st=1669571405~exp=1669572005~hmac=a4e9baccc0bd616fd1d4fbac11ec170196e066defa4fd90737a5539ae76cd6fd"
